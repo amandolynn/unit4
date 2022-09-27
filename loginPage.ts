@@ -8,12 +8,14 @@ interface Options {
     url?: string;
 }
 
-export class loginPage {
+export class LoginPage {
     driver: WebDriver; 
     url: string = 'https://www.saucedemo.com/'
     loginButton: By = By.xpath('//input[@class="submit-button btn_action"]')
     username: By = By.name('user-name')
     password: By = By.id('password')
+    errorMessage: By = By.xpath('//h3[@data-test="error"]')
+
     constructor(driver: WebDriver, url: string) {
         this.driver = driver 
         this.url = url 
